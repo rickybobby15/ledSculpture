@@ -39,18 +39,15 @@ void wave(int tick, int brightnessInitial, int brightnessFinal) {
     // 249 + 8 = 257. There exist no pixel with that address. 
     int startingRow = (tick * PIX_PER_ROW) % 249;
     
-    for(int whiteFade = brightnessInitial; whiteFade < brightnessFinal; whiteFade++) { // brightness level incrementation
-    
-    for (int i = 0; i < PIX_PER_ROW; i++) {  // position incrementation
-        pixels.setPixelColor(startingRow + i, pixels.Color(whiteFade, whiteFade, whiteFade)); // (Adress of Pixel, Color to Pixel); 
-        pixels.show();
-    }
-   
-    delay(delayval);
-}  
-    
+    for (int whiteFade = brightnessInitial; whiteFade < brightnessFinal; whiteFade++) { // brightness level incrementation 
+      for (int i = 0; i < PIX_PER_ROW; i++) {  // position incrementation
+          pixels.setPixelColor(startingRow + i, pixels.Color(255, 255, 255)); // (Adress of Pixel, Color to Pixel); 
+          pixels.show();
+      }
+      pixels.setBrightness(whiteFade);
+      delay(delayval);
+    }  
 }
-
 
 void pixelClear() { 
     pixels.clear();
