@@ -10,7 +10,6 @@
 #define NUMPIXELS      256
 #define PIX_PER_ROW     8
 #define COLUMNS     32
-
 //--
 
 
@@ -50,7 +49,7 @@ void wave(int tick, int brightnessInitial, int brightnessFinal) {
 	}  
 }
 
-
+    
 void pixelClear() { 
     pixels.clear();
 }
