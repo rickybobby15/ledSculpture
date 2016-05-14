@@ -10,7 +10,6 @@
 #define NUMPIXELS      256
 #define PIX_PER_ROW     8
 #define COLUMNS     32
-
 //--
 
 
@@ -41,17 +40,16 @@ void wave(int tick, int brightnessInitial, int brightnessFinal) {
     
     for(int whiteFade = brightnessInitial; whiteFade < brightnessFinal; whiteFade++) { // brightness level incrementation
     
-    for (int i = 0; i < PIX_PER_ROW; i++) {  // position incrementation
-        pixels.setPixelColor(startingRow + i, pixels.Color(whiteFade, whiteFade, whiteFade)); // (Adress of Pixel, Color to Pixel); 
-        pixels.show();
-    }
+    	for (int i = 0; i < PIX_PER_ROW; i++) {  // position incrementation
+    	    pixels.setPixelColor(startingRow + i, pixels.Color(whiteFade, whiteFade, whiteFade)); // (Adress of Pixel, Color to Pixel); 
+    	    pixels.show();
+    	}
    
-    delay(delayval);
-}  
-    
+   		delay(delayval);
+	}  
 }
 
-
+    
 void pixelClear() { 
     pixels.clear();
 }
